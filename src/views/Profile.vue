@@ -35,13 +35,34 @@ export default {
       }
     }
   },
-  mounted() {
-    const savedProfile = localStorage.getItem('profile')
 
-    if (savedProfile) {
-      this.profile = JSON.parse(savedProfile)
+  async mounted() {
+    try {
+      const profile = await getProfile()
+      console.log('profile result:', profile)
+
+      this.profile = {
+        pk: profile.pk || profile.id,
+        username: profile.username || '',
+        first_name: profile.first_name || '',
+        last_name: profile.last_name || '',
+        phone_number: profile.phone_number || '',
+        email: profile.email || '',
+        restaurant_name: profile.restaurant_name || ''
+      }
+
+      localStorage.setItem('profile', JSON.stringify(this.profile))
+    } catch (error) {
+      console.error('Error loading profile:', error)
+
+      const savedProfile = localStorage.getItem('profile')
+
+      if (savedProfile) {
+        this.profile = JSON.parse(savedProfile)
+      }
     }
   },
+
   methods: {
     async saveProfile() {
       try {
@@ -52,6 +73,7 @@ export default {
         localStorage.setItem('profile', JSON.stringify(this.profile))
         this.editMode = false
       } catch (error) {
+        console.error('Error updating profile:', error)
         alert('Update failed')
       }
     }
