@@ -173,3 +173,19 @@ export async function getProfile() {
 
   return result;
 }
+
+export async function updateProfile(data) {
+  const response = await fetch(`${API_URL}/api/profile/`, {
+    method: "PATCH",
+    headers: getAuthHeaders(),
+    body: JSON.stringify(data),
+  });
+
+  const result = await response.json();
+
+  if (!response.ok) {
+    throw new Error(JSON.stringify(result));
+  }
+
+  return result;
+}

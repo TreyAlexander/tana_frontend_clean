@@ -66,16 +66,23 @@ export default {
   methods: {
     async saveProfile() {
       try {
-        if (this.profile.pk) {
-          await updateUser(this.profile.pk, this.profile)
-        }
+        const updatedProfile = await updateProfile(this.profile)
 
-        localStorage.setItem('profile', JSON.stringify(this.profile))
-        this.editMode = false
-      } catch (error) {
-        console.error('Error updating profile:', error)
-        alert('Update failed')
-      }
+      this.profile = {
+        pk: updatedProfile.pk || updatedProfile.id,
+        username: updatedProfile.username || '',
+        first_name: updatedProfile.first_name || '',
+        last_name: updatedProfile.last_name || '',
+        phone_number: updatedProfile.phone_number || '',
+        email: updatedProfile.email || '',
+        restaurant_name: updatedProfile.restaurant_name || ''
+    }
+
+    localStorage.setItem('profile', JSON.stringify(this.profile))
+    this.editMode = false
+  } catch (error) {
+    console.error('Error updating profile:', error)
+    alert('Update failed')
     }
   }
 }
