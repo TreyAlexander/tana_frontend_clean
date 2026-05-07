@@ -10,7 +10,7 @@
 
     <figure>
       <img :src="restaurant3" class="stock-img" />
-      <figcaption>"TANA keeps our fridge fully stacked - The Bear</figcaption>
+      <figcaption>"TANA keeps our fridge fully stacked" - The Bear</figcaption>
     </figure>
 
     <figure>
@@ -24,7 +24,9 @@
         <p><strong>Stock your kitchen.</strong></p>
         <p><strong>Serve your best.</strong></p>
         <p><strong>Save room for dessert.</strong></p>
-        <p>At TANA, we believe that managing your inventory should be as easy as pie. This is why we offer the best inventory management system available--all for free. 
+        <p>At TANA, we believe that managing your inventory should be as easy as pie.</p>
+        <p>This is why we offer the best inventory management system available--all for free.</p>
+        <p>     .     .     .</p>
         <P>Voted as Omaha's Best Inventory Management Solution for 5 consecutive years!</P>
         </p>
     </div>
