@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { getProfile, updateUser } from '../services/api'
+import { getProfile, updateProfile } from '../services/api'
 
 export default {
   name: 'Profile',
