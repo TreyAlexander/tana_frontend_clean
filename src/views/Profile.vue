@@ -80,9 +80,10 @@ export default {
 
     localStorage.setItem('profile', JSON.stringify(this.profile))
     this.editMode = false
-  } catch (error) {
-    console.error('Error updating profile:', error)
-    alert('Update failed')
+    } catch (error) {
+      console.error('Error updating profile:', error)
+      alert('Update failed')
+      }
     }
   }
 }
