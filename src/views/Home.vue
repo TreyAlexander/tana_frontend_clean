@@ -2,22 +2,22 @@
     <h2> Welcome to TANA! </h2>
     <h3> We make monitoring inventory a piece of cake </h3>
 
-    <div class="image-row">
-        <figure>
-            <img src="/src/assets/restaurant4.png" class="stock-img" />
-            <figcaption>"We couldn't do it without Trey, Anh, Neida, and Amaris" - Block16.</figcaption>
-        </figure>
+   <div class="image-row">
+    <figure>
+      <img :src="restaurant4" class="stock-img" />
+      <figcaption>"We couldn't do it without Trey, Anh, Neida, and Amaris" - Block16.</figcaption>
+    </figure>
 
-        <figure>
-            <img src="/src/assets/restaurant3.png" class="stock-img" />
-            <figcaption>"TANA keeps our fridge fully stacked - The Bear</figcaption>
-        </figure>
+    <figure>
+      <img :src="restaurant3" class="stock-img" />
+      <figcaption>"TANA keeps our fridge fully stacked - The Bear</figcaption>
+    </figure>
 
-        <figure>
-            <img src="/src/assets/restaurant5.png" class="stock-img" />
-            <figcaption>"TANA is BANANAS. B A N A N A S" - Omaha Taphouse</figcaption>
-        </figure>
-    </div>
+    <figure>
+      <img :src="restaurant5" class="stock-img" />
+      <figcaption>"TANA is BANANAS. B A N A N A S" - Omaha Taphouse</figcaption>
+    </figure>
+  </div>
 
     <div class="info-section">
     <div class="info-box left-box">
@@ -38,7 +38,22 @@
     </div>
 </template>
 
+<script>
+import restaurant3 from '../assets/restaurant3.png'
+import restaurant4 from '../assets/restaurant4.png'
+import restaurant5 from '../assets/restaurant5.png'
 
+export default {
+  name: 'Home',
+  data() {
+    return {
+      restaurant3,
+      restaurant4,
+      restaurant5
+    }
+  }
+}
+</script>
 
 <style scoped>
 h2{
