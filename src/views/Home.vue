@@ -28,7 +28,6 @@
         <p>This is why we offer the best inventory management system available--all for free.</p>
         <p>     .     .     .</p>
         <P>Voted as Omaha's Best Inventory Management Solution for 5 consecutive years!</P>
-        </p>
     </div>
 
     <div class="info-box right-box">
