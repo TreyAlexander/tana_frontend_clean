@@ -158,3 +158,18 @@ export async function getCategories() {
 
   return result;
 }
+
+export async function getProfile() {
+  const response = await fetch(`${API_URL}/api/profile/`, {
+    method: "GET",
+    headers: getAuthHeaders(),
+  });
+
+  const result = await response.json();
+
+  if (!response.ok) {
+    throw new Error(JSON.stringify(result));
+  }
+
+  return result;
+}
